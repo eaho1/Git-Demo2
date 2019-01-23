@@ -14,10 +14,16 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        Jump();
     }
 
     void Move()
     {
         this.transform.Translate(Vector3.left * 5f * Time.deltaTime);
+    }
+    
+    void Jump()
+    {
+        this.GetComponent<Rigidbody>().AddForce(Vector3.up * 9001f);
     }
 }
