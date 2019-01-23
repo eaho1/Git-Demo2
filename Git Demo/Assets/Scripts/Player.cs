@@ -20,4 +20,12 @@ public class Player : MonoBehaviour
     {
         this.transform.Translate(Vector3.left * 5f * Time.deltaTime);
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("Enemy"))
+        {
+            Debug.Log("Die");
+        }
+    }
 }
