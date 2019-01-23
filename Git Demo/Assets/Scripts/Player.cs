@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        Jump();
     }
 
     void Move()
@@ -27,5 +28,11 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Die");
         }
+	}
+
+    
+    void Jump()
+    {
+        this.GetComponent<Rigidbody>().AddForce(Vector3.up * 9001f);
     }
 }
